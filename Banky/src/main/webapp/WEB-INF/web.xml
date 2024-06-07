@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>BankServlet</display-name>
+    <servlet-name>BankServlet</servlet-name>
+    <servlet-class>com.nit.bank.BankServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BankServlet</servlet-name>
+    <url-pattern>/BankServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
