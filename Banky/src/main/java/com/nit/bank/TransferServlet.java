@@ -26,7 +26,7 @@ public class TransferServlet extends HttpServlet {
 			}else {
 				request.setAttribute("message", "Transfer failed. Please check the account details and balance.");
 			}
-			request.getRequestDispatcher("LandingPageAfterLogin.jsp").forward(request, response);
+			request.getRequestDispatcher("Transfer.jsp").forward(request, response);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

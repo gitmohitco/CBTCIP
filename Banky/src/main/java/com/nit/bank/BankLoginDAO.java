@@ -18,6 +18,7 @@ public class BankLoginDAO {
 				register.setAccountNumber(resultset.getLong(4));
 				register.setMobileNumber(resultset.getLong(5));
 				register.setUserAccounttype(resultset.getString(6));
+				register.setBalance(resultset.getFloat(7));
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

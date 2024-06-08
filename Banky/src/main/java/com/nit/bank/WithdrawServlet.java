@@ -21,15 +21,17 @@ public class WithdrawServlet extends HttpServlet {
 			BankRegistrationBean register = (BankRegistrationBean)session.getAttribute("loginsession");
 			long accountNumber = Long.parseLong(request.getParameter("accountNumber"));
 			float balance = Float.parseFloat(request.getParameter("balance"));
-				if(accountNumber == register.getAccountNumber()) {
+			System.out.println(register.getBalance());
+				if(accountNumber == register.getAccountNumber() && balance<=register.getBalance()) {
 					register.setBalance(balance);
 					int k = new WithdrawDAO().withdrawit(register);
-					
 					if(k>0) {
-						request.setAttribute("message", "Transaction Successful!!");
+						request.setAttribute("message", "Transaction Successfull!!");
 					}
+				}else {
+					request.setAttribute("message", "Transaction failed");
 				}
-			request.getRequestDispatcher("LandingPageAfterLogin.jsp").forward(request, response);
+			request.getRequestDispatcher("Withdraw.jsp").forward(request, response);
 		}
 	}
 }

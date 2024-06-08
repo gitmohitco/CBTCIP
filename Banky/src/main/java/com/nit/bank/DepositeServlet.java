@@ -23,8 +23,9 @@ public class DepositeServlet extends HttpServlet {
 					if(k>0) {
 						request.setAttribute("message", "Transaction Successful!!");
 					}
-				}
-			request.getRequestDispatcher("LandingPageAfterLogin.jsp").forward(request, response);
+				}else 
+					request.setAttribute("message", "Transaction failed!!");
+			request.getRequestDispatcher("Deposite.jsp").forward(request, response);
 		}
 	}
 }

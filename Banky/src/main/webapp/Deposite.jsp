@@ -78,6 +78,10 @@
 		color: #fff;
 		margin-top: 5px;
 	}
+	p{
+		color: red;
+		font-size: 1rem;
+	}
 </style>
 </head>
 <body>
@@ -105,6 +109,10 @@
 			<input type="text" name="ownerName" placeholder="Holder Name" value=<%=register.getOwnerName() %>>
 			<input type="number" name="balance" placeholder="Balance">
 			<input type="text" name="accType" placeholder="Account Type" value=<%=register.getUserAccounttype() %>>
+			<%
+				String message = (String)request.getAttribute("message");
+				out.println("<p>"+message+"</p>");
+			%>
 			<input type="submit" value="Deposite">
 		</form>
 	</main>

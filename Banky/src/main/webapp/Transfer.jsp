@@ -80,6 +80,10 @@
 		color: #fff;
 		margin-top: 5px;
 	}
+	p{
+		color: red;
+		font-size: 1rem;
+	}
 </style>
 </head>
 <body>
@@ -106,6 +110,10 @@
 		<input type="number" name="yourAccountNumber" value=<%= register.getAccountNumber() %> placeholder="Account Number" readonly>
 		<input type="number" name="benificiaryAccountNumber" placeholder="Benificiary Account Number">
 		<input type="number" name="balance" placeholder="Amount"> 
+		<%
+			String msg = (String)request.getAttribute("message");
+			out.println("<p>"+msg+"</p>");
+		%>
 		<input type="submit" value="Transfer">
 	</form>
 	</main>
