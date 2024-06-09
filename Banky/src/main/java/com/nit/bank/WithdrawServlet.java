@@ -21,7 +21,6 @@ public class WithdrawServlet extends HttpServlet {
 			BankRegistrationBean register = (BankRegistrationBean)session.getAttribute("loginsession");
 			long accountNumber = Long.parseLong(request.getParameter("accountNumber"));
 			float balance = Float.parseFloat(request.getParameter("balance"));
-			System.out.println(register.getBalance());
 				if(accountNumber == register.getAccountNumber() && balance<=register.getBalance()) {
 					register.setBalance(balance);
 					int k = new WithdrawDAO().withdrawit(register);
